@@ -3,12 +3,12 @@ import React from "react";
 function DataVisualization({ data }) {
   return (
     <section className="dados">
-      <table>
-        <thead>
+      <table className="min-w-full border-collapse border border-gray-300">
+        <thead className="bg-gray-100">
           <tr>
-            <th>Instituição</th>
-            <th>Cidade</th>
-            <th>Estado</th>
+            <th scope="col" className="border p-2">Instituição</th>
+            <th scope="col" className="border p-2">Cidade</th>
+            <th scope="col" className="border p-2">Estado</th>
           </tr>
         </thead>
         <tbody>

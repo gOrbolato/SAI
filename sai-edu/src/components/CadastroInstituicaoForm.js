@@ -15,6 +15,7 @@ function CadastroInstituicaoForm({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <label htmlFor="nome">Nome da Instituição</label>
       <input
         type="text"
         id="nome"
@@ -24,6 +25,7 @@ function CadastroInstituicaoForm({ onSubmit }) {
         required
       />
 
+      <label htmlFor="cidade">Selecione a Cidade</label>
       <input
         type="text"
         id="cidade"
@@ -32,7 +34,7 @@ function CadastroInstituicaoForm({ onSubmit }) {
         onChange={(e) => setCidade(e.target.value)}
         required
       />
-
+      <label htmlFor="estado">Selecione o Estado</label>
       <input
         type="text"
         id="estado"

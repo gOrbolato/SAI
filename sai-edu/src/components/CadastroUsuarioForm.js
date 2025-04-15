@@ -21,6 +21,10 @@ function CadastroUsuarioForm({ onSubmit }) {
       alert("As senhas não coincidem. Por favor, verifique.");
       return;
     }
+    if (password.length < 6) {
+      alert("A senha deve ter pelo menos 6 caracteres.");
+      return;
+    }
 
     onSubmit({
       nome,
@@ -51,15 +55,17 @@ function CadastroUsuarioForm({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <label htmlFor="nome">Nome</label>
       <input
         type="text"
-        id="name"
+        id="nome"
         placeholder="Digite seu nome"
         value={nome}
         onChange={(e) => setNome(e.target.value)}
         required
       />
 
+      <label htmlFor="id">ID</label>
       <input
         type="text"
         id="id"
@@ -69,6 +75,7 @@ function CadastroUsuarioForm({ onSubmit }) {
         required
       />
 
+      <label htmlFor="email">E-mail</label>
       <input
         type="email"
         id="email"
@@ -78,6 +85,7 @@ function CadastroUsuarioForm({ onSubmit }) {
         required
       />
 
+      <label htmlFor="ra">RA</label>
       <input
         type="text"
         id="ra"
@@ -87,6 +95,7 @@ function CadastroUsuarioForm({ onSubmit }) {
         required
       />
 
+      <label htmlFor="instituicao">Instituição</label>
       <input
         type="text"
         id="instituicao"
@@ -96,6 +105,7 @@ function CadastroUsuarioForm({ onSubmit }) {
         required
       />
 
+      <label htmlFor="cidade">Cidade</label>
       <input
         type="text"
         id="cidade"
@@ -105,6 +115,7 @@ function CadastroUsuarioForm({ onSubmit }) {
         required
       />
 
+      <label htmlFor="estado">Estado</label>
       <input
         type="text"
         id="estado"
@@ -114,6 +125,7 @@ function CadastroUsuarioForm({ onSubmit }) {
         required
       />
 
+      <label htmlFor="curso">Curso</label>
       <input
         type="text"
         id="curso"

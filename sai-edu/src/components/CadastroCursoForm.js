@@ -13,6 +13,7 @@ function CadastroCursoForm({ instituicoes, onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <label htmlFor="nome">Nome do Curso</label>
       <input
         type="text"
         id="nome"
@@ -31,8 +32,8 @@ function CadastroCursoForm({ instituicoes, onSubmit }) {
       >
         <option value="">Escolha uma Instituição</option>
         {instituicoes.map((instituicao) => (
-          <option key={instituicao} value={instituicao}>
-            {instituicao}
+          <option key={instituicao.id} value={instituicao.nome}>
+            {instituicao.nome}
           </option>
         ))}
       </select>

@@ -1,21 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom"; // ✅ Importa Link
 
 function Menu() {
   return (
     <nav className="Menu">
       <ul>
-        <li><a href="/">Home</a></li>
+        <li><Link to="/">Home</Link></li>
         <li className="dropdown-menu">
-          <a href="#Cadastro">Cadastrar</a>
+          <Link to="#">Cadastrar</Link>
           <ul className="submenu">
-            <li><a href="/cadastro-instituicao">Cadastrar Instituição</a></li>
-            <li><a href="/cadastrar-curso">Cadastrar Curso</a></li>
-            <li><a href="/cadastrar-materia">Cadastrar Matéria</a></li>
+            <li><Link to="/cadastro-instituicao">Cadastrar Instituição</Link></li>
+            <li><Link to="/cadastrar-curso">Cadastrar Curso</Link></li>
+            <li><Link to="/cadastrar-materia">Cadastrar Matéria</Link></li>
           </ul>
         </li>
-        <li><a href="/visualizacao">Visualização</a></li>
-        <li><a href="/avaliacao">Avaliações</a></li>
-        <li><a href="/reavaliacao">Reavaliações</a></li>
+        <li><Link to="/visualizacao">Visualização</Link></li>
+        <li><Link to="/avaliacao">Avaliações</Link></li>
+        <li><Link to="/reavaliacao">Reavaliações</Link></li>
       </ul>
     </nav>
   );

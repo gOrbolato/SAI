@@ -15,6 +15,7 @@ function CadastroMateriaForm({ onSubmit }) {
         setCursos(data);
       } catch (error) {
         console.error("Erro ao buscar cursos:", error);
+        setErroFetch(true);
       }
     };
 
@@ -31,6 +32,7 @@ function CadastroMateriaForm({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
+      <label htmlFor="periodo">Selecione o Período</label>
       <input
         type="text"
         id="periodo"
@@ -40,6 +42,7 @@ function CadastroMateriaForm({ onSubmit }) {
         required
       />
 
+      <label htmlFor="materia">Selecione a Matéria</label>
       <input
         type="text"
         id="nome"
@@ -58,9 +61,9 @@ function CadastroMateriaForm({ onSubmit }) {
       >
         <option value="">Escolha um Curso</option>
         {cursos.map((curso) => (
-          <option key={curso} value={curso}>
-            {curso}
-          </option>
+          <option key={curso.id} value={curso.nome}>
+          {curso.nome}
+        </option>
         ))}
       </select>
 
