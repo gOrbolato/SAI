@@ -1,0 +1,80 @@
+.recovery-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.recovery-container h2 {
+    margin-bottom: 20px;
+    color: rgb(184, 115, 51);
+}
+
+.recovery-container p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555555;
+}
+
+.recovery-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.recovery-container input:focus {
+    border-color: rgb(184, 115, 51);
+    outline: none;
+}
+
+.recovery-container button {
+    padding: 10px;
+    background-color: rgb(184, 115, 51);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.recovery-container button:hover {
+    background-color: #ffffff;
+    border: 1.5px solid rgb(150, 90, 45);
+    color: rgb(150, 90, 45);
+}
+
+.back {
+    margin-top: 15px;
+    font-size: 14px;
+    color: rgb(128, 128, 128);
+}
+
+.back a {
+    color: rgb(184, 115, 51);
+    text-decoration: none;
+}
+
+.back a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .recovery-container {
+        padding: 15px;
+        width: 90%;
+    }
+
+    .recovery-container input,
+    .recovery-container button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

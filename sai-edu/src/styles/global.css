@@ -1,0 +1,111 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações globais */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(245, 245, 245);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(184, 115, 51);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+}
+
+.header h1 {
+    font-size: larger;
+}
+
+.header p a {
+    text-decoration: none;
+    color: white;
+}
+
+.header p a:hover {
+    text-decoration: underline;
+}
+
+/* Menu Horizontal */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(128, 128, 128);
+    margin: 0;
+    list-style: none;
+}
+
+.menu li {
+    position: relative;
+    margin: 0 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+}
+
+.menu a:hover {
+    background-color: rgb(150, 90, 45);
+    color: white;
+}
+
+.menu li > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(150, 90, 45);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 150px;
+    list-style: none;
+}
+
+.menu li > ul li a {
+    color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.menu li > ul li a:hover {
+    background-color: rgb(184, 115, 51);
+}
+
+.menu li:hover > .cadastro,
+.menu li:hover > .visualizar,
+.menu li:hover > .avaliacao {
+    display: block;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(128, 128, 128);
+    color: white;
+}

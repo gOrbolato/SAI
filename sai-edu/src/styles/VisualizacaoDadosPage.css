@@ -1,0 +1,71 @@
+.home-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.search-section form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-section input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 300px;
+}
+
+.search-section button {
+    padding: 10px;
+    background-color: rgb(184, 115, 51);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-section button:hover {
+    background-color: #ffffff;
+    border: 1.5px solid rgb(150, 90, 45);
+    color: rgb(150, 90, 45);
+}
+
+.dados table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.dados th,
+.dados td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.dados th {
+    background-color: rgb(184, 115, 51);
+    color: white;
+}
+
+.dados tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+    .search-section input {
+        width: 200px;
+    }
+
+    .search-section button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
