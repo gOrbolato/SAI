@@ -2,38 +2,46 @@ import React, { useState } from "react";
 
 function CadastroCursoForm({ instituicoes, onSubmit }) {
   const [nomeCurso, setNomeCurso] = useState("");
-  const [instituicaoSelecionada, setInstituicaoSelecionada] = useState("");
+  const [instituicaoId, setInstituicaoId] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ nomeCurso, instituicaoSelecionada });
+
+    // Monta os dados no formato certo
+    const dadosCurso = {
+      nome: nomeCurso,
+      instituicaoId: parseInt(instituicaoId) // importante ser número
+    };
+
+    onSubmit(dadosCurso);
+
+    // Limpa o formulário
     setNomeCurso("");
-    setInstituicaoSelecionada("");
+    setInstituicaoId("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="nome">Nome do Curso</label>
+      <label htmlFor="nomeCurso">Nome do Curso:</label>
       <input
         type="text"
-        id="nome"
-        placeholder="Digite o nome do curso"
+        id="nomeCurso"
         value={nomeCurso}
         onChange={(e) => setNomeCurso(e.target.value)}
         required
       />
 
-      <label htmlFor="instituicao">Selecione a Instituição</label>
+      <label htmlFor="instituicao">Instituição:</label>
       <select
         id="instituicao"
-        value={instituicaoSelecionada}
-        onChange={(e) => setInstituicaoSelecionada(e.target.value)}
+        value={instituicaoId}
+        onChange={(e) => setInstituicaoId(e.target.value)}
         required
       >
-        <option value="">Escolha uma Instituição</option>
-        {instituicoes.map((instituicao) => (
-          <option key={instituicao.id} value={instituicao.nome}>
-            {instituicao.nome}
+        <option value="">Selecione uma instituição</option>
+        {instituicoes.map((inst) => (
+          <option key={inst.id} value={inst.id}>
+            {inst.nome}
           </option>
         ))}
       </select>

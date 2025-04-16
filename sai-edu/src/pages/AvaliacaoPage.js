@@ -31,20 +31,29 @@ function AvaliacaoPage() {
     fetchOptions();
   }, []);
 
-  const handleInstituicaoSubmit = (data) => {
-    console.log("Avaliação de Instituição:", data);
-    // Enviar dados para o backend
-  };
-
-  const handleCursoSubmit = (data) => {
-    console.log("Avaliação de Curso:", data);
-    // Enviar dados para o backend
-  };
-
-  const handleMateriaSubmit = (data) => {
-    console.log("Avaliação de Matéria:", data);
-    // Enviar dados para o backend
-  };
+  const handleInstituicaoSubmit = (data) => enviarAvaliacao("/api/avaliar-instituicao", data, "instituição");
+  const handleCursoSubmit = (data) => enviarAvaliacao("/api/avaliar-curso", data, "curso");
+  const handleMateriaSubmit = (data) => enviarAvaliacao("/api/avaliar-materia", data, "matéria");
+  
+  const enviarAvaliacao = async (url, data, nome) => {
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+  
+      const result = await response.json();
+  
+      if (result.success) {
+        alert(`Avaliação de ${nome} enviada com sucesso!`);
+      } else {
+        alert(`Erro ao enviar avaliação de ${nome}.`);
+      }
+    } catch (error) {
+      console.error(`Erro ao enviar avaliação de ${nome}:`, error);
+    }
+  };  
 
   return (
     <div>

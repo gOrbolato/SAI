@@ -12,7 +12,7 @@ function RecoveryForm() {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:3000/api/recuperar-senha", {
+      const response = await axios.post("http://localhost:5000/api/recuperar-senha", {
         email,
       });
 

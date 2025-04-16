@@ -6,11 +6,14 @@ function VisualizacaoDadosForm({ onSearch }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSearch(searchTerm);
+    setSearchTerm("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      <label htmlFor="search" className="sr-only">Pesquisar Instituição</label>
       <input
+        id="search"
         type="text"
         placeholder="Digite o nome da instituição"
         value={searchTerm}

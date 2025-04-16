@@ -21,9 +21,24 @@ function CadastroCursoPage() {
     fetchInstituicoes();
   }, []); // Executa apenas uma vez quando o componente é montado
 
-  const handleCadastro = (data) => {
-    console.log("Dados do curso cadastrado:", data);
-    // Enviar dados para o backend
+  const handleCadastro = async(data) => {
+    try {
+      const response = await fetch("http://localhost:5000/api/cursos", {
+        method: "POST",
+        headers: { "Content-Type": "application/json"},
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        alert("Curso cadastrado com sucesso!");
+      } else {
+        alert("Erro ao cadastrar curso.");
+      }
+    } catch (error) {
+      console.error("Erro ao cadastrar curso:", error);
+      alert("Erro no servidor. Tente novamente mais tarde.");
+    }
   };
 
   return (
